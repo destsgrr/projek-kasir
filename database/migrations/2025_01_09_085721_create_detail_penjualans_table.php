@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('detail_penjualans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('PenjualanId');
+            $table->unsignedBigInteger('ProdukId');
+            $table->integer('JumlahProduk');
+            $table->decimal('SubTotal', 10, 2);
+            
             $table->timestamps();
         });
     }
