@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
+            $table->date('TanggalPenjualan');
+            $table->decimal('TotalHarga', 10, 2);
+            $table->unsignedBigInteger('UserId');
             $table->timestamps();
         });
     }
