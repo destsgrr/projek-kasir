@@ -12,7 +12,9 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        //
+        $title = 'Produk';
+        $subtitle = 'Index';
+        return view('admin.produk.index', compact('title', 'subtitle'));
     }
 
     /**
