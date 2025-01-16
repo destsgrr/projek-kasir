@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -74,6 +75,19 @@ class UserController extends Controller
 
     public function registerStore(Request $request)
     {
-        return $request->all();
+        $validate = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|same:password_confirmation',
+        ]);
+
+        $validate['password'] = bcrypt($validate['password']);
+
+        $simpan = User::create($validate);
+        if ($simpan){
+            return redirect()->route('login')->with('success', 'Registrasi Berhasil');
+        }else{
+            return redirect()->route('register')->with('error', 'Registrasi Gagal');
+        }
     }
 }

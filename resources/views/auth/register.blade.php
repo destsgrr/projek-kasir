@@ -8,8 +8,17 @@
     </div>
     <div class="card-body">
       <p class="login-box-msg">Daftar Sebagai Petugas</p>
-
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+          @endforeach
+</ul>
+</div>
+@endif
       <form action="{{ route('register.store') }}" method="post">
+        @csrf
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Full name" name="name">
           <div class="input-group-append">

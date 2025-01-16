@@ -10,7 +10,16 @@
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
-
+      @session('success')
+      <div class="alert alert-success">
+        {{session('success')}}
+        </div>
+      @endSession
+      @session('error')
+      <div class ="alert alert-danger">
+      {{session('error')}}
+      </div>
+      @endSession
       <form action="../../index3.html" method="post">
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email">
