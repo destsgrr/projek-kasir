@@ -55,10 +55,10 @@
             <td>{{ $produk->Harga }}</td>
             <td>{{ $produk->Stok }}</td>
             <td>
-              <form action="{{ route('admin.produk.destroy', $produk->id) }}" method="POST">
+              <form action="{{ route('produk.destroy', $produk->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <a href="{{route('admin.produk.edit', $produk->id) }}"
+                <a href="{{route('produk.edit', $produk->id) }}"
                 class="btn btn-sm btn-primary">Edit</a>
                 <button type="submit" class="btm btn-sm btn-danger">Delete</button>
 
