@@ -52,7 +52,7 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $produk->NamaProduk }}</td>
-            <td>{{ $produk->Harga }}</td>
+            <td>{{ rupiah($produk->Harga) }}</td>
             <td>{{ $produk->Stok }}</td>
             <td>
               <form action="{{ route('produk.destroy', $produk->id) }}" method="POST">

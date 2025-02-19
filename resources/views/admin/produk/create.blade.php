@@ -84,6 +84,9 @@
                         text: data.message,
                         confirmButtonText: 'Ok'
                     })
+                    $('input[name="NamaProduk"]').val('');
+                    $('input[name="Harga"]').val('');
+                    $('input[name="Stok"]').val('');
 
                 },
                 error: function(data) {
